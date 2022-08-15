@@ -71,7 +71,7 @@ router.post(
         // Delete all files generated into cache folder
         try {
           await fs.unlink(zipFilePath);
-          await fs.rmdir(`${IMAGES_PATH}/${id}`, { recursive: true });
+          await fs.rm(`${IMAGES_PATH}/${id}`, { recursive: true });
         } catch (e) {
           console.log("Error on deleting", e.message);
         }

@@ -26,7 +26,7 @@ const INVALID_PAYLOAD = {
 const WENT_WRONG = {
   error: "WENT_WRONG",
   message: "Something went wrong, Please try again later.",
-  detail: "We have sent a report to our developers. We apologize for the inconvenience",
+  detail: "Something went wrong, Please Try again later. We have sent a report to our developers. We apologize for the inconvenience",
 };
 
 module.exports = {
