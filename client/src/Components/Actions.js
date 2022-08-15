@@ -63,12 +63,10 @@ const Actions = () => {
 			setTimeout(() => {
 				setCookStatus(2);
 			}, 5000);
-
-			console.log(res);
 		} catch (e) {
-			alert(e.response.data.detail ?? e.response.data.error);
-			setCookStatus(0);
 			console.log(e.response.data.detail ?? e.response.data.error);
+			alert(e.response.data.detail ?? e.response.data.error ?? "Something went wrong. Try again later");
+			setCookStatus(0);
 		}
 	};
 

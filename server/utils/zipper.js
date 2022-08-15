@@ -1,7 +1,7 @@
 const JSZip = require("jszip");
 const fs = require("fs").promises;
 
-const ZIP_PATH = "cache/images-zip";
+const ZIP_PATH = "images-zip";
 
 const generateZIP = async (filePaths, name) => {
   const zipFilePath = `${ZIP_PATH}/${name}`;

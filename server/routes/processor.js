@@ -7,7 +7,7 @@ const { INVALID_PARAMS, INSUFFICIENT_PARAMS, IMAGE_NOT_FOUND, INVALID_TYPE, INVA
 const { convertType, convertSize } = require("../utils/sharpHelper");
 const { generateZIP } = require("../utils/zipper");
 
-const IMAGES_PATH = "cache/images";
+const IMAGES_PATH = "images";
 
 const upload = require("multer")({
   limits: {
