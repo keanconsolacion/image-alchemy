@@ -15,9 +15,9 @@ const Navbar = () => {
 					<NavLink to="/" className={({ isActive }) => (isActive ? "font-bold scale-animation" : "scale-animation")}>
 						Home
 					</NavLink>
-					<NavLink to="/api" className={({ isActive }) => (isActive ? "font-bold scale-animation" : "scale-animation")}>
+					<a href="https://github.com/keanconsolacion/image-alchemy" className="scale-animation">
 						Get the API
-					</NavLink>
+					</a>
 				</div>
 			</div>
 		</div>
