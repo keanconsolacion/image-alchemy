@@ -79,8 +79,8 @@ const Actions = () => {
 	const renderCookProgress = () => {
 		if (cookStatus === 0) {
 			return (
-				<div className="text-lg font-bold border rounded scale-animation">
-					<button className="py-1.5 px-6" onClick={onClickCook}>
+				<div className="w-full text-lg font-bold border rounded scale-animation">
+					<button className="py-1.5" onClick={onClickCook}>
 						Cook
 					</button>
 				</div>
@@ -96,7 +96,7 @@ const Actions = () => {
 		}
 		if (cookStatus === 2) {
 			return (
-				<button className="py-1.5 px-6 border rounded scale-animation" onClick={onClickCookAgain}>
+				<button className="py-1.5 w-full border rounded scale-animation" onClick={onClickCookAgain}>
 					Cook again!
 				</button>
 			);
@@ -106,14 +106,10 @@ const Actions = () => {
 	return (
 		<div className="flex flex-col items-center justify-center gap-12 mx-4 mt-20">
 			{/* Options */}
-			<div className="flex gap-4">
-				<div className="font-serif text-xl w-44 text-end">
+			<div className="flex flex-col items-center gap-6 text-center md:relative">
+				<div className="md:absolute md:left-[-200px] md:top-10 font-serif text-xl text-end">
 					<h1>
-						Just <span className="text-[#FFC700] font-bold">select</span>
-						<br />
-						your preferred
-						<br />
-						options,
+						Just <span className="text-[#FFC700] font-bold">select</span> your <br /> preferred options,
 					</h1>
 				</div>
 
@@ -188,13 +184,10 @@ const Actions = () => {
 			</div>
 
 			{/* Image drop */}
-			<div className="flex gap-4">
-				<h1 className="font-serif text-xl w-44 text-end">
-					<span className="text-[#FFC700] font-bold"> Upload</span>
-					<br />
-					your images
-					<br />
-					here,
+			<div className="flex flex-col items-center gap-6 text-center md:relative">
+				<h1 className="md:absolute md:right-[-150px] md:top-10 font-serif text-xl text-end">
+					<span className="text-[#FFC700] font-bold">Upload </span>
+					your <br/> images here,
 				</h1>
 				<label className="flex flex-col gap-2 p-6 justify-center items-center w-[248px] border-2 border-dashed rounded scale-animation">
 					<div className="flex flex-col items-center">
@@ -209,10 +202,10 @@ const Actions = () => {
 			</div>
 
 			{/* Cook button */}
-			<div className="flex w-full gap-4">
-				<h1 className="font-serif text-xl w-44 text-end">
-					And Finally, <br />
-					<span className="text-[#FFC700] font-bold">Cook!</span>
+			<div className="flex flex-col items-center gap-6 text-center md:relative">
+				<h1 className="md:absolute md:left-[-200px] font-serif text-xl text-end">
+					And Finally,
+					<span className="text-[#FFC700] font-bold"> Cook!</span>
 				</h1>
 				<div className="flex flex-col gap-6 justify-center items-center w-[248px]">{renderCookProgress()}</div>
 			</div>
