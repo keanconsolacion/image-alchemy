@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
+import Dropzone from "react-dropzone";
 const FileDownload = require("js-file-download");
 
 const Actions = () => {
@@ -19,9 +20,9 @@ const Actions = () => {
 	const onChangeType = (e) => setType(e.target.value);
 	const onClickFlip = () => setFlip(!flip);
 	const onClickFlop = () => setFlop(!flop);
-	const onChangeFiles = (e) => {
+	const onChangeFiles = (files) => {
 		const allowedTypes = ["jpg", "jpeg", "png", "webp", "gif", "heic", "heif"];
-		const isValid = Object.values(e.target.files).every((file) => {
+		const isValid = Object.values(files).every((file) => {
 			return allowedTypes.includes(file.type.replace("image/", ""));
 		});
 		if (!isValid) {
@@ -29,9 +30,9 @@ const Actions = () => {
 			alert("Please only upload valid file types (jpg/jpeg, png, webp, gif & heic/heif)");
 			return;
 		}
-		setFileCount(`${e.target.files.length} image/s uploaded`);
-		setFiles(e.target.files);
-		console.log("files", e.target.value);
+		setFileCount(`${files.length} image/s uploaded`);
+		setFiles(files);
+		console.log("files", files);
 	};
 
 	const onClickCook = async () => {
@@ -104,12 +105,12 @@ const Actions = () => {
 	};
 
 	return (
-		<div className="flex flex-col items-center justify-center gap-12 mx-4 mt-20">
+		<div className="flex flex-col items-center justify-center gap-12 mx-4">
 			{/* Options */}
 			<div className="flex flex-col items-center gap-6 text-center md:relative">
 				<div className="md:absolute md:left-[-200px] md:top-10 font-serif text-xl text-end">
 					<h1>
-						Just <span className="text-[#FFC700] font-bold">select</span> your <br /> preferred options,
+						Just <span className="text-[#FFC700] font-bold">select</span> your <br /> preferred options:
 					</h1>
 				</div>
 
@@ -184,27 +185,33 @@ const Actions = () => {
 			</div>
 
 			{/* Image drop */}
-			<div className="flex flex-col items-center gap-6 text-center md:relative">
-				<h1 className="md:absolute md:right-[-150px] md:top-10 font-serif text-xl text-end">
-					<span className="text-[#FFC700] font-bold">Upload </span>
-					your <br/> images here,
-				</h1>
-				<label className="flex flex-col gap-2 p-6 justify-center items-center w-[248px] border-2 border-dashed rounded scale-animation">
-					<div className="flex flex-col items-center">
-						{uploadLogo}
-						<h1 className="font-bold">Upload images</h1>
-					</div>
-					<div className="text-center">
-						<h1 className="text-sm text-slate-500">{fileCount}</h1>
-					</div>
-					<input type="file" className="w-[248px] opacity-0 hidden" multiple={true} onChange={onChangeFiles} />
-				</label>
-			</div>
+			<Dropzone onDrop={(acceptedFiles) => onChangeFiles(acceptedFiles)}>
+				{({ getRootProps, getInputProps }) => (
+					<section>
+						<div className="flex flex-col items-center gap-6 text-center md:relative" {...getRootProps()}>
+							<h1 className="md:absolute md:left-[-150px] md:top-10 font-serif text-xl text-end">
+								<span className="text-[#FFC700] font-bold">Upload </span>
+								your <br /> images here:
+							</h1>
+							<div className="flex flex-col gap-2 p-6 justify-center items-center w-[248px] border-2 border-dashed rounded scale-animation">
+								<div className="flex flex-col items-center">
+									{uploadLogo}
+									<h1 className="font-bold">Upload images</h1>
+								</div>
+								<div className="text-center">
+									<h1 className="text-sm text-slate-500">{fileCount}</h1>
+								</div>
+								<input {...getInputProps()} />
+							</div>
+						</div>
+					</section>
+				)}
+			</Dropzone>
 
 			{/* Cook button */}
 			<div className="flex flex-col items-center gap-6 text-center md:relative">
 				<h1 className="md:absolute md:left-[-200px] font-serif text-xl text-end">
-					And Finally,
+					And finally,
 					<span className="text-[#FFC700] font-bold"> Cook!</span>
 				</h1>
 				<div className="flex flex-col gap-6 justify-center items-center w-[248px]">{renderCookProgress()}</div>

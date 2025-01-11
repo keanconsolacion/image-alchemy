@@ -4,12 +4,11 @@ const Hero = () => {
 	return (
 		<div className="flex flex-col items-center gap-12">
 			<div className="flex flex-col text-center">
-				<h1 className="text-3xl font-bold md:text-4xl">Welcome to</h1>
-				<h1 className="p-2 text-7xl md:text-8xl font-black text-transparent bg-gradient-to-r bg-clip-text from-[#FF00D6] via-[#654BFF] to-[#FF0000]">
+				<h1 className="p-2 text-6xl lg:text-7xl xl:text-8xl font-extrabold text-transparent bg-gradient-to-r bg-clip-text from-[#FF00D6] via-[#654BFF] to-[#FF0000]">
 					Image Alchemy
 				</h1>
 			</div>
-			<div className="flex gap-4 mx-6 font-serif">
+			<div className="flex flex-col md:flex-row gap-4 mx-6 font-serif">
 				<div className="p-2 border border-white">
 					<h1 className="font-bold text-[#FFC700]">What is it?</h1>
 					<h1>

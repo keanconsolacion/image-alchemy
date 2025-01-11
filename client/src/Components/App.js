@@ -4,11 +4,9 @@ import Actions from "./Actions";
 
 const App = () => {
 	return (
-		<div className="w-full mt-10 mb-32 md:mt-20">
-			<div className="flex flex-col items-center">
-				<Hero />
-				<Actions />
-			</div>
+		<div className="flex flex-1 flex-col lg:flex-row justify-center items-center gap-[40px] lg:gap-[180px] mx-6 py-16">
+			<Hero />
+			<Actions />
 		</div>
 	);
 };
