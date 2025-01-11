@@ -8,21 +8,20 @@ const Hero = () => {
 					Image Alchemy
 				</h1>
 			</div>
-			<div className="flex flex-col md:flex-row gap-4 mx-6 font-serif">
-				<div className="p-2 border border-white">
-					<h1 className="font-bold text-[#FFC700]">What is it?</h1>
-					<h1>
-						Image Alchemy is a bulk image processing tool
-						<br /> based on the Sharp npm module that transforms
-						<br /> and edit you images. (up to 20 images at a time!)
-					</h1>
+			<div className="flex flex-col md:flex-row gap-4 mx-6 font-light">
+			<div className="p-2 border border-slate-500 w-[300px] lg-[400px]">
+					<h1 className="font-bold text-[#FFC700] text-lg">What is it?</h1>
+					<p>
+						Image Alchemy is a powerful bulk image processing tool built on the Sharp npm module. It enables you to
+						transform and edit up to 20 images at once with ease!
+					</p>
 				</div>
-				<div className="p-2 border border-white">
-					<h1 className="font-bold text-[#FFC700]">Why use it?</h1>
-					<h1>
-						By using Image Alchemy, you can transform, <br /> convert type, and minify images all <br /> in one go.
-						Thus, eliminating tedious tasks!
-					</h1>
+				<div className="p-2 border border-slate-500 w-[300px] lg-[400px]">
+					<h1 className="font-bold text-[#FFC700] text-lg">Why use it?</h1>
+					<p>
+						With Image Alchemy, you can effortlessly transform, convert, and optimize images—all in one seamless
+						process. Say goodbye to tedious tasks and hello to efficiency!
+					</p>
 				</div>
 			</div>
 		</div>
