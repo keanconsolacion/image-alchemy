@@ -80,7 +80,7 @@ const Actions = () => {
 	const renderCookProgress = () => {
 		if (cookStatus === 0) {
 			return (
-				<div className="w-full text-lg font-bold border rounded scale-animation">
+				<div className="w-full text-lg font-bold border border-slate-300 rounded scale-animation">
 					<button className="py-1.5" onClick={onClickCook}>
 						Cook
 					</button>
@@ -108,23 +108,23 @@ const Actions = () => {
 		<div className="flex flex-col items-center justify-center gap-12 mx-4">
 			{/* Options */}
 			<div className="flex flex-col items-center gap-6 text-center md:relative">
-				<div className="md:absolute md:left-[-200px] md:top-10 font-serif text-xl text-end">
+				<div className="md:absolute md:left-[-200px] md:top-10  text-xl text-end">
 					<h1>
 						Just <span className="text-[#FFC700] font-bold">select</span> your <br /> preferred options:
 					</h1>
 				</div>
 
-				<div className="flex flex-col gap-2 p-2 bg-transparent border rounded">
+				<div className="flex flex-col gap-2 p-2 bg-transparent border border-slate-500 rounded">
 					<label>Width in pixels</label>
 					<input
-						className="p-1 bg-transparent border border-white placeholder-slate-700"
+						className="p-1 bg-transparent border border-slate-400 placeholder-slate-700"
 						type="number"
 						placeholder="Default"
 						onChange={onChangeWidth}
 					/>
 					<label>Height in pixels</label>
 					<input
-						className="p-1 bg-transparent border border-white placeholder-slate-700"
+						className="p-1 bg-transparent border border-slate-400 placeholder-slate-700"
 						type="number"
 						placeholder="Default"
 						onChange={onChangeHeight}
@@ -133,7 +133,7 @@ const Actions = () => {
 					<label className="flex gap-1">
 						Fit {addTip("Dictates how the image is fitted whenever width and height must be changed.")}
 					</label>
-					<select className="p-1 text-white bg-transparent border border-white" onChange={onChangeFit}>
+					<select className="p-1 text-white bg-transparent border border-slate-400" onChange={onChangeFit}>
 						<option className="text-black" value="cover">
 							Cover
 						</option>
@@ -152,7 +152,7 @@ const Actions = () => {
 					</select>
 
 					<label>File type destination</label>
-					<select className="p-1 text-white bg-transparent border border-white" onChange={onChangeType}>
+					<select className="p-1 text-white bg-transparent border border-slate-400" onChange={onChangeType}>
 						<option className="text-black" disabled={true}>
 							File Type
 						</option>
@@ -189,11 +189,11 @@ const Actions = () => {
 				{({ getRootProps, getInputProps }) => (
 					<section>
 						<div className="flex flex-col items-center gap-6 text-center md:relative" {...getRootProps()}>
-							<h1 className="md:absolute md:left-[-150px] md:top-10 font-serif text-xl text-end">
+							<h1 className="md:absolute md:left-[-150px] md:top-10  text-xl text-end">
 								<span className="text-[#FFC700] font-bold">Upload </span>
 								your <br /> images here:
 							</h1>
-							<div className="flex flex-col gap-2 p-6 justify-center items-center w-[248px] border-2 border-dashed rounded scale-animation">
+							<div className="flex flex-col gap-2 p-6 justify-center items-center w-[248px] border-2 border-dashed border-slate-500 rounded scale-animation">
 								<div className="flex flex-col items-center">
 									{uploadLogo}
 									<h1 className="font-bold">Upload images</h1>
@@ -210,7 +210,7 @@ const Actions = () => {
 
 			{/* Cook button */}
 			<div className="flex flex-col items-center gap-6 text-center md:relative">
-				<h1 className="md:absolute md:left-[-200px] font-serif text-xl text-end">
+				<h1 className="md:absolute md:left-[-200px] top-2 text-xl text-end">
 					And finally,
 					<span className="text-[#FFC700] font-bold"> Cook!</span>
 				</h1>
