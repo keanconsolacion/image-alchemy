@@ -1,4 +1,7 @@
-# Image Alchemy
+# Preview
+https://github.com/user-attachments/assets/0a3e35dd-ba2f-43aa-9e8d-3afcb49595b1
+
+# About
 
 This repository contains a Node.js application built with the `sharp` library for image processing. It provides a React.js frontend for a user-friendly interface to perform bulk image transformations, watermarking, and optimization.
 
